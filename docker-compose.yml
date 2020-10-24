@@ -1,0 +1,13 @@
+version : '3'
+services:
+    backend:
+        container_name: "back"
+        image: tacila/backend:latest
+        ports:
+        - 7177:7177
+
+    frontend:
+        container_name: "front"
+        image: tacila/frontend:latest
+        ports:
+        - 4200:4200

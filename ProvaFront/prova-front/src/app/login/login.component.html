@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="">
+        <h4 class="text-center">Login</h4>
+
+        <form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
+
+            <div class="form-group">
+                <input #userNameInput formControlName="cpf" class="form-control" placeholder="cpf" autofocus>
+                <ap-vmessage *ngIf="loginForm.get('cpf').errors?.required" text="CPF obrigatório!">
+                </ap-vmessage>
+            </div>
+
+            <div class="form-group">
+                <input formControlName="senha" type="password" class="form-control" placeholder="senha">
+                <ap-vmessage *ngIf="loginForm.get('senha').errors?.required" text="Senha Obrigatória!">
+                </ap-vmessage>
+            </div>
+
+            <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
+                login
+            </button>
+
+        </form>
+
+    </div>
